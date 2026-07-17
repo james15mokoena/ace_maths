@@ -11,7 +11,7 @@
 
 ### What is the objective of AceMath?
 
-- This solution aims to teach the learners the necessary theory that will enable them to __identify__ different types of Mathematics problems, and show them how to __solve__ them.
-- This solution focuses on training learners to be __problem solvers__ by exposing them to various types of problems.
+- This solution aims to teach the learners the minimal but necessary theory that will enable them to __identify__ different types of Mathematics problems, and show how to __solve__ them.
+- This solution focuses on training learners to be __problem solvers__, as a result, the majority of its content are problems and their corresponding solutions.
 
 ---
