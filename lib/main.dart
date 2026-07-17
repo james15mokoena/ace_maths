@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 
 void main() {
   runApp(const MyApp());
@@ -109,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Math.tex(r'x^2+y^2=z^2', textStyle: TextStyle(fontSize: 20)),
           ],
         ),
       ),
