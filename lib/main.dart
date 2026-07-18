@@ -1,5 +1,7 @@
+import 'package:ace_maths/models/bottom_navbar_model.dart';
 import 'package:ace_maths/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 //import 'package:flutter_math_fork/flutter_math.dart';
 
 void main() {
@@ -12,10 +14,17 @@ class AceMathApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: RouteGenerator.homePage,
-      onGenerateRoute: (settings) => RouteGenerator.generateRoute(settings),
-      debugShowCheckedModeBanner: false,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<BottomNavbarModel>(
+          create: (_) => BottomNavbarModel(),
+        ),
+      ],
+      child: MaterialApp(
+        initialRoute: RouteGenerator.layoutPage,
+        onGenerateRoute: (settings) => RouteGenerator.generateRoute(settings),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

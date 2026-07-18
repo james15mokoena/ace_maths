@@ -5,8 +5,6 @@
 
 ## Todo
 
-- Work on the app bar.
-- Work on the bottom navigation bar.
 - Work on the home page's content.
 - Work on the review page's content.
 - Work on the about page's content.

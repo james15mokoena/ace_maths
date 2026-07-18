@@ -1,3 +1,5 @@
+import 'package:ace_maths/widgets/bottom_navbar.dart';
+import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -5,16 +7,6 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("AceMath"), centerTitle: true),
-      body: Center(child: const Text("About the app and the developer.")),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-          NavigationDestination(icon: Icon(Icons.reviews), label: "Review"),
-          NavigationDestination(icon: Icon(Icons.info), label: "About"),
-        ],
-      ),
-    );
+    return Center(child: const Text("About"));
   }
 }
