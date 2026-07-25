@@ -1,10 +1,4 @@
-# AceMath
+# AceMaths
 
-- A solution that is developed to help Grade 10 to 12 Science learners who do Pure Mathematics to become __problem solvers__.
-- This solution was started on 17 July 2026 and finished on ___.
-
-## Todo
-
-- Work on the home page's content.
-- Work on the review page's content.
-- Work on the about page's content.
+- A solution that is aimed at helping Grade 10 to 12 Mathematics students improve their problem solving ability by showing them how to solve different types of problems.
+- This solution was started on 17 July 2026.
