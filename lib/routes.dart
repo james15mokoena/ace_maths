@@ -1,4 +1,5 @@
 import 'package:ace_maths/pages/about.dart';
+import 'package:ace_maths/pages/algebraic_expressions.dart';
 import 'package:ace_maths/pages/analytical_geometry.dart';
 import 'package:ace_maths/pages/equations_inequalities.dart';
 import 'package:ace_maths/pages/euclidean_geometry.dart';
@@ -82,7 +83,9 @@ class RouteGenerator {
       case aboutPage:
         return MaterialPageRoute(builder: (_) => const AboutPage());
       case algebraicExpressionPage:
-        return MaterialPageRoute(builder: (_) => const AboutPage());
+        return MaterialPageRoute(
+          builder: (_) => const AlgebraicExpressionsPage(),
+        );
       case exponentsPage:
         return MaterialPageRoute(builder: (_) => const ExponentsPage());
       case equationsInequalitiesPage:

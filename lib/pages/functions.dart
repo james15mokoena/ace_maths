@@ -1,3 +1,4 @@
+import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
 
 class FunctionsPage extends StatelessWidget {
@@ -5,6 +6,9 @@ class FunctionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Text("Functions Content"));
+    return Scaffold(
+      appBar: TopAppbar(title: "Functions"),
+      body: const Text("Functions Content"),
+    );
   }
 }

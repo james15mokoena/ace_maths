@@ -1,3 +1,4 @@
+import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
 
 class TrigonometryPage extends StatelessWidget {
@@ -5,6 +6,9 @@ class TrigonometryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Text("Trigonometry Content"));
+    return Scaffold(
+      appBar: TopAppbar(title: "Trigonometry"),
+      body: const Text("Trigonometry Content"),
+    );
   }
 }

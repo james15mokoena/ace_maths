@@ -1,3 +1,4 @@
+import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
 
 class EquationsInequalitiesPage extends StatelessWidget {
@@ -5,6 +6,9 @@ class EquationsInequalitiesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Text("Equations & Inequalities Content"));
+    return Scaffold(
+      appBar: TopAppbar(title: "Equations & Inequalities"),
+      body: const Text("Equations & Inequalities Content"),
+    );
   }
 }

@@ -8,6 +8,10 @@ class ReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: const Text("Review"));
+    return Scaffold(
+      appBar: TopAppbar(title: "Review"),
+      body: Center(child: const Text("Review")),
+      bottomNavigationBar: BottomNavbar(),
+    );
   }
 }

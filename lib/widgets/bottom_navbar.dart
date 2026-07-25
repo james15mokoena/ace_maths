@@ -37,6 +37,11 @@ class _BottomNavbarState extends State<BottomNavbar> {
           onDestinationSelected: (selectedIndex) =>
               bottomNavbarModel.updateSelectedIndex(selectedIndex),
           selectedIndex: bottomNavbarModel.selectedIndex,
+          labelTextStyle: WidgetStateProperty.fromMap(
+            <WidgetStatesConstraint, TextStyle>{
+              WidgetState.any: TextStyle(fontSize: 18),
+            },
+          ),
         );
       },
     );
