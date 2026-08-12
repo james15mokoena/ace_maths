@@ -97,31 +97,34 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: ListView.separated(
+          addAutomaticKeepAlives: true,
           itemBuilder: (context, itemIndex) {
             return SizedBox(
               height: 150,
-              child: ListTile(
-                title: Text(
-                  _topics[itemIndex].name,
-                  style: TextStyle(fontSize: 22),
+              child: Card(
+                child: ListTile(
+                  title: Text(
+                    _topics[itemIndex].name,
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  titleTextStyle: TextStyle(fontSize: 24, color: Colors.black),
+                  isThreeLine: true,
+                  subtitle: Padding(
+                    padding: EdgeInsetsGeometry.only(top: 50),
+                    child: _topics[itemIndex].example,
+                  ),
+                  subtitleTextStyle: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  titleAlignment: .center,
+                  tileColor: Colors.grey,
+                  hoverColor: Colors.blueGrey,
+                  onTap: () => Navigator.of(
+                    context,
+                  ).pushNamed(_topics[itemIndex].targetRoute),
                 ),
-                titleTextStyle: TextStyle(fontSize: 24, color: Colors.black),
-                isThreeLine: true,
-                subtitle: Padding(
-                  padding: EdgeInsetsGeometry.only(top: 50),
-                  child: _topics[itemIndex].example,
-                ),
-                subtitleTextStyle: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-                titleAlignment: .center,
-                tileColor: Colors.grey,
-                hoverColor: Colors.blueGrey,
-                onTap: () => Navigator.of(
-                  context,
-                ).pushNamed(_topics[itemIndex].targetRoute),
               ),
             );
           },
