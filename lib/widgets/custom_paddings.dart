@@ -29,15 +29,14 @@ class QuestionPadding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsGeometry.all(10),
-      child: Text(
-        question,
-        style: TextStyle(
-          decoration: TextDecoration.underline,
-          decorationColor: Colors.red,
-          color: Colors.red,
-          fontSize: 20,
+    return Card(
+      margin: EdgeInsets.all(10),
+      elevation: 2,
+      child: Padding(
+        padding: const EdgeInsetsGeometry.all(10),
+        child: Text(
+          question,
+          style: TextStyle(color: Colors.red, fontSize: 20),
         ),
       ),
     );
@@ -62,7 +61,7 @@ class StepsPadding extends StatelessWidget {
       ),
       child: Text(
         stepsTitle,
-        style: TextStyle(fontSize: 20, fontStyle: .italic),
+        style: TextStyle(fontSize: 20, fontWeight: .bold),
       ),
     );
   }
@@ -79,9 +78,27 @@ class CasePadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsGeometry.only(left: 10, right: 10, bottom: 10),
-      child: const Text(
-        "Case 1: Given a Graph",
-        style: TextStyle(fontWeight: .bold, fontSize: 20),
+      child: Text(
+        caseTitle,
+        style: TextStyle(fontStyle: .italic, fontSize: 20),
+      ),
+    );
+  }
+}
+
+/// It returns a [Padding] that displays the definition of a concept.
+class DefinitionPadding extends StatelessWidget {
+  final String definition;
+
+  const DefinitionPadding({super.key, required this.definition});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsetsGeometry.all(10),
+      child: Text(
+        definition,
+        style: TextStyle(fontSize: 20, color: Colors.purple),
       ),
     );
   }

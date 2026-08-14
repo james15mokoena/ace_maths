@@ -1,3 +1,4 @@
+import 'package:ace_maths/widgets/cards.dart';
 import 'package:ace_maths/widgets/custom_paddings.dart';
 import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +21,7 @@ class TrigonometricFunctionsPage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsGeometry.all(10),
-            child: const Text(
-              "After studying this topic, you must be able to solve the following problems:",
-              style: TextStyle(fontSize: 22),
-            ),
-          ),
+          ExpectedAbilityCard(),
           ExpectedQuestionPadding(
             question:
                 "1. How to determine the period of a sin, cos or tan function?",
@@ -73,18 +68,15 @@ class TrigonometricFunctionsPage extends StatelessWidget {
                 "1. How to determine the period of a sin, cos or tan function?",
           ),
           // definition of a Period widget
-          Padding(
-            padding: const EdgeInsetsGeometry.all(10),
-            child: const Text(
-              "A period is the length of the interval on the x-axis (which is the axis for angles) that contains exactly one cycle or after which the shape of the graph repeats.",
-              style: TextStyle(fontSize: 20),
-            ),
+          DefinitionPadding(
+            definition:
+                "A period is the length of the interval on the x-axis (which is the axis for angles) that contains exactly one cycle or after which the shape of the graph repeats.",
           ),
-          CasePadding(caseTitle: "Case 1: Given a Graph"),
           StepsPadding(
             stepsTitle:
                 "Steps for determining the period of a sin or cos function:",
           ),
+          CasePadding(caseTitle: "Case 1: Given a Graph"),
           Padding(
             padding: const EdgeInsetsGeometry.only(
               left: 20,
@@ -100,6 +92,25 @@ class TrigonometricFunctionsPage extends StatelessWidget {
                 const Text("ONE"),
                 const Text("TWO"),
                 const Text("THREE"),
+              ],
+            ),
+          ),
+          CasePadding(caseTitle: "Case 2: Given a Function"),
+          Padding(
+            padding: const EdgeInsetsGeometry.only(
+              left: 20,
+              top: 0,
+              bottom: 10,
+              right: 5,
+            ),
+            child: Column(
+              crossAxisAlignment: .start,
+              mainAxisSize: .min,
+              spacing: 10,
+              children: [
+                const Text("Four"),
+                const Text("Five"),
+                const Text("Six"),
               ],
             ),
           ),
