@@ -9,7 +9,7 @@ class ExpectedQuestionPadding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
       child: Align(
         alignment: .topLeft,
         child: Text(
@@ -80,7 +80,12 @@ class CasePadding extends StatelessWidget {
       padding: const EdgeInsetsGeometry.only(left: 10, right: 10, bottom: 10),
       child: Text(
         caseTitle,
-        style: TextStyle(fontStyle: .italic, fontSize: 20),
+        style: TextStyle(
+          fontStyle: .italic,
+          fontSize: 20,
+          decorationStyle: .solid,
+          decoration: TextDecoration.underline,
+        ),
       ),
     );
   }
@@ -88,18 +93,48 @@ class CasePadding extends StatelessWidget {
 
 /// It returns a [Padding] that displays the definition of a concept.
 class DefinitionPadding extends StatelessWidget {
+  /// The word or term to be defined.
+  final String term;
+
+  /// The definition of the word or term.
   final String definition;
 
-  const DefinitionPadding({super.key, required this.definition});
+  const DefinitionPadding({
+    super.key,
+    required this.term,
+    required this.definition,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsGeometry.all(10),
-      child: Text(
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: term,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: .bold,
+                color: Colors.purple,
+              ),
+            ),
+            const TextSpan(
+              text: " - ",
+              style: TextStyle(fontSize: 20, color: Colors.purple),
+            ),
+            TextSpan(
+              text: definition,
+              style: TextStyle(color: Colors.purple, fontSize: 20),
+            ),
+          ],
+        ),
+      ),
+      /*Text(
         definition,
         style: TextStyle(fontSize: 20, color: Colors.purple),
-      ),
+      )*/
     );
   }
 }

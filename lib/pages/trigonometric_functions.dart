@@ -2,6 +2,7 @@ import 'package:ace_maths/widgets/cards.dart';
 import 'package:ace_maths/widgets/custom_paddings.dart';
 import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 
 class TrigonometricFunctionsPage extends StatelessWidget {
   const TrigonometricFunctionsPage({super.key});
@@ -69,12 +70,13 @@ class TrigonometricFunctionsPage extends StatelessWidget {
           ),
           // definition of a Period widget
           DefinitionPadding(
+            term: "Period",
             definition:
-                "A period is the length of the interval on the x-axis (which is the axis for angles) that contains exactly one cycle or after which the shape of the graph repeats.",
+                "Is the length of the interval on the x-axis (which is the axis for angles) that contains exactly one cycle or after which the shape of the graph repeats.",
           ),
           StepsPadding(
             stepsTitle:
-                "Steps for determining the period of a sin or cos function:",
+                "Steps for determining the period of a sin, cos or tan function:",
           ),
           CasePadding(caseTitle: "Case 1: Given a Graph"),
           Padding(
@@ -89,9 +91,35 @@ class TrigonometricFunctionsPage extends StatelessWidget {
               mainAxisSize: .min,
               spacing: 10,
               children: [
-                const Text("ONE"),
-                const Text("TWO"),
-                const Text("THREE"),
+                RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                    children: [
+                      const TextSpan(
+                        text:
+                            "1. Look at the graph, and identify the start angle of the graph (which is usually ",
+                      ),
+                      WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
+                        child: Math.tex(
+                          r"0^\circ",
+                          textStyle: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      const TextSpan(
+                        text:
+                            ") and the angle after which the shape of the graph begins to repeat.",
+                      ),
+                    ],
+                  ),
+                ),
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                    text:
+                        "2. Subtract the start angle from the angle at which the shape of the graph starts to repeat, then the result is the period of the graph.",
+                  ),
+                ),
               ],
             ),
           ),
@@ -108,9 +136,69 @@ class TrigonometricFunctionsPage extends StatelessWidget {
               mainAxisSize: .min,
               spacing: 10,
               children: [
-                const Text("Four"),
-                const Text("Five"),
-                const Text("Six"),
+                RichText(
+                  text: const TextSpan(
+                    text:
+                        "1. Identify the type of trigonometric function given, whether it is a sin, cos or tan function.",
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
+                ),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      const TextSpan(
+                        text: "2. Let variable ",
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                      const TextSpan(
+                        text: "b",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontStyle: .italic,
+                        ),
+                      ),
+                      const TextSpan(
+                        text:
+                            " equals the coefficient of the input variable x.",
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      const TextSpan(
+                        text: "3. Use this formula: ",
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                      WidgetSpan(
+                        child: Math.tex(
+                          r"Period = \frac{360^\circ}{b}",
+                          textStyle: TextStyle(fontSize: 20),
+                          mathStyle: MathStyle.script,
+                        ),
+                      ),
+                      const TextSpan(
+                        text:
+                            " to calculate the period for a sin or cos function or this formula: ",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+                      WidgetSpan(
+                        child: Math.tex(
+                          r"Period = \frac{180^\circ}{b}",
+                          textStyle: TextStyle(fontSize: 20),
+                          mathStyle: MathStyle.script,
+                        ),
+                      ),
+                      const TextSpan(
+                        text: " to calculate the period for a tan function.",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
