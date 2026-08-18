@@ -1,7 +1,9 @@
 import 'package:ace_maths/widgets/cards.dart';
 import 'package:ace_maths/widgets/custom_paddings.dart';
+import 'package:ace_maths/widgets/spans.dart';
 import 'package:ace_maths/widgets/top_navbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class TrigonometricFunctionsPage extends StatelessWidget {
@@ -73,6 +75,48 @@ class TrigonometricFunctionsPage extends StatelessWidget {
             term: "Period",
             definition:
                 "Is the length of the interval on the x-axis (which is the axis for angles) that contains exactly one cycle or after which the shape of the graph repeats.",
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  PlainTextSpan.plainText(
+                    text:
+                        "The period of a sin or cos functions of the form: y = asin(bx) + q or y = acos(bx) + q where b = 1 is always 360",
+                  ),
+                  DegreeSpan.degrees(),
+                  PlainTextSpan.plainText(text: " because at 360"),
+                  DegreeSpan.degrees(),
+                  PlainTextSpan.plainText(
+                    text:
+                        " their graphs complete exactly one cycle or the shape of the graph starts to repeat itself.",
+                  ),
+                ],
+                style: TextStyle(color: Colors.purple, fontSize: 20),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  PlainTextSpan.plainText(
+                    text:
+                        "The period of a tan function of the form: y = atan(bx) + q where b = 1 is always 180",
+                  ),
+                  DegreeSpan.degrees(),
+                  PlainTextSpan.plainText(text: " because at 180"),
+                  DegreeSpan.degrees(),
+                  PlainTextSpan.plainText(
+                    text:
+                        " the graph completes exactly one cycle or the shape of the graph starts to repeat itself.",
+                  ),
+                ],
+                style: TextStyle(color: Colors.purple, fontSize: 20),
+              ),
+            ),
           ),
           StepsPadding(
             stepsTitle:
@@ -174,10 +218,12 @@ class TrigonometricFunctionsPage extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.black),
                       ),
                       WidgetSpan(
+                        alignment: .belowBaseline,
+                        baseline: .alphabetic,
                         child: Math.tex(
                           r"Period = \frac{360^\circ}{b}",
                           textStyle: TextStyle(fontSize: 20),
-                          mathStyle: MathStyle.script,
+                          mathStyle: MathStyle.text,
                         ),
                       ),
                       const TextSpan(
@@ -186,10 +232,12 @@ class TrigonometricFunctionsPage extends StatelessWidget {
                         style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       WidgetSpan(
+                        alignment: .belowBaseline,
+                        baseline: .alphabetic,
                         child: Math.tex(
                           r"Period = \frac{180^\circ}{b}",
                           textStyle: TextStyle(fontSize: 20),
-                          mathStyle: MathStyle.script,
+                          mathStyle: MathStyle.text,
                         ),
                       ),
                       const TextSpan(
@@ -202,6 +250,7 @@ class TrigonometricFunctionsPage extends StatelessWidget {
               ],
             ),
           ),
+          StepsPadding(stepsTitle: "Problems:"),
         ],
       ),
     );
