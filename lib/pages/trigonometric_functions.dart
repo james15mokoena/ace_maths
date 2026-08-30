@@ -1,9 +1,11 @@
+import 'package:ace_maths/models/graph_generators.dart';
 import 'package:ace_maths/widgets/cards.dart';
 import 'package:ace_maths/widgets/custom_paddings.dart';
+import 'package:ace_maths/widgets/graphs.dart';
 import 'package:ace_maths/widgets/spans.dart';
 import 'package:ace_maths/widgets/top_navbar.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class TrigonometricFunctionsPage extends StatelessWidget {
@@ -218,7 +220,7 @@ class TrigonometricFunctionsPage extends StatelessWidget {
                         style: TextStyle(fontSize: 20, color: Colors.black),
                       ),
                       WidgetSpan(
-                        alignment: .belowBaseline,
+                        alignment: .baseline,
                         baseline: .alphabetic,
                         child: Math.tex(
                           r"Period = \frac{360^\circ}{b}",
@@ -232,7 +234,7 @@ class TrigonometricFunctionsPage extends StatelessWidget {
                         style: TextStyle(color: Colors.black, fontSize: 20),
                       ),
                       WidgetSpan(
-                        alignment: .belowBaseline,
+                        alignment: .baseline,
                         baseline: .alphabetic,
                         child: Math.tex(
                           r"Period = \frac{180^\circ}{b}",
@@ -250,7 +252,20 @@ class TrigonometricFunctionsPage extends StatelessWidget {
               ],
             ),
           ),
-          StepsPadding(stepsTitle: "Problems:"),
+          StepsPadding(stepsTitle: "Problems for Case 1:"),
+          Graph(
+            points: [
+              FlSpot(0, 0),
+              FlSpot(30, 0.5),
+              FlSpot(60, 0),
+              FlSpot(90, -0.5),
+              FlSpot(120, 0),
+            ],
+            minX: 0,
+            maxX: 120,
+            minY: -1,
+            maxY: 1,
+          ),
         ],
       ),
     );
